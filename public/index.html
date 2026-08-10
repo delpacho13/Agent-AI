@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agent IA — Tâches quotidiennes</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --border: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #8b93a3;
+    --accent: #6c8cff;
+    --bubble-user: #2a3550;
+    --bubble-bot: #1d212b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+  }
+  #tasks-panel {
+    width: 320px;
+    border-right: 1px solid var(--border);
+    padding: 16px;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+  #tasks-panel h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .task {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .task.done { opacity: 0.5; text-decoration: line-through; }
+  .task .due { color: var(--accent); font-size: 12px; display: block; margin-top: 2px; }
+  #chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  #messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .msg {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    font-size: 14.5px;
+  }
+  .msg.user { align-self: flex-end; background: var(--bubble-user); }
+  .msg.assistant { align-self: flex-start; background: var(--bubble-bot); border: 1px solid var(--border); }
+  .msg.pending { color: var(--muted); font-style: italic; }
+  #input-row {
+    display: flex;
+    gap: 8px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+  }
+  #input-row input {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: var(--text);
+    font-size: 14.5px;
+  }
+  #input-row button {
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #input-row button:disabled { opacity: 0.5; cursor: default; }
+</style>
+</head>
+<body>
+  <div id="tasks-panel">
+    <h2>Tâches</h2>
+    <div id="task-list"></div>
+  </div>
+  <div id="chat">
+    <div id="messages"></div>
+    <div id="input-row">
+      <input id="input" type="text" placeholder="Écris un message… (ex: ajoute « appeler le dentiste » pour demain)" autofocus />
+      <button id="send">Envoyer</button>
+    </div>
+  </div>
+
+<script>
+  const messagesEl = document.getElementById("messages");
+  const taskListEl = document.getElementById("task-list");
+  const inputEl = document.getElementById("input");
+  const sendBtn = document.getElementById("send");
+
+  let history = [];
+
+  function renderMessage(role, text, pending) {
+    const div = document.createElement("div");
+    div.className = "msg " + role + (pending ? " pending" : "");
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
+  }
+
+  async function refreshTasks() {
+    try {
+      const res = await fetch("/api/tasks");
+      const data = await res.json();
+      taskListEl.innerHTML = "";
+      if (!data.tasks || data.tasks.length === 0) {
+        taskListEl.innerHTML = '<p style="color:var(--muted);font-size:13px;">Aucune tâche pour le moment.</p>';
+        return;
+      }
+      for (const t of data.tasks) {
+        const div = document.createElement("div");
+        div.className = "task" + (t.done ? " done" : "");
+        div.innerHTML = "#" + t.id + " " + t.title + (t.due_at ? '<span class="due">' + t.due_at + "</span>" : "");
+        taskListEl.appendChild(div);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function send() {
+    const text = inputEl.value.trim();
+    if (!text) return;
+    inputEl.value = "";
+    sendBtn.disabled = true;
+
+    history.push({ role: "user", content: text });
+    renderMessage("user", text);
+    const pendingEl = renderMessage("assistant", "…", true);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ history }),
+      });
+      const data = await res.json();
+      pendingEl.remove();
+      if (!res.ok) {
+        renderMessage("assistant", "Erreur : " + (data.error || "inconnue"));
+        history.pop();
+      } else {
+        history.push({ role: "assistant", content: data.reply });
+        renderMessage("assistant", data.reply);
+        refreshTasks();
+      }
+    } catch (e) {
+      pendingEl.remove();
+      renderMessage("assistant", "Erreur réseau.");
+      history.pop();
+    } finally {
+      sendBtn.disabled = false;
+      inputEl.focus();
+    }
+  }
+
+  sendBtn.addEventListener("click", send);
+  inputEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") send();
+  });
+
+  refreshTasks();
+</script>
+</body>
+</html>
