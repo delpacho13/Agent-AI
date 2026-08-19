@@ -3,6 +3,9 @@
 Un agent IA (Claude) pour gérer tes tâches du quotidien : to-do list, rappels et
 briefing de la journée, via une interface de chat web.
 
+> Ce dépôt héberge aussi **[le site NACRÉ](site/)** — la boutique vitrine avec
+> panier et précommandes, publiée sur GitHub Pages. Voir [`site/README.md`](site/README.md).
+
 ## Fonctionnement
 
 - **Backend** : Node.js / TypeScript, Express.

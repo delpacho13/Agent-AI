@@ -93,10 +93,35 @@ python3 -m http.server 8099 --directory site
 # puis http://127.0.0.1:8099
 ```
 
+## Version « un seul fichier »
+
+```bash
+node tools/build-standalone.mjs
+```
+
+Produit `standalone/nacre-standalone.html` : tout le site en un fichier de
+~440 ko (CSS, JS, polices et visuels intégrés en `data:` URI). Zéro requête
+externe. Il s'ouvre en double-cliquant et se dépose tel quel sur n'importe
+quel hébergeur. `standalone/nacre-artifact.html` est la même page sans
+`<html>`/`<head>`/`<body>`, pour une publication en Artifact.
+
 ## Déploiement
 
 `.github/workflows/deploy-site.yml` publie ce dossier sur GitHub Pages à
-chaque push touchant `site/`.
+chaque push touchant `site/`, et vérifie ensuite le site en ligne (titre,
+fiches produits, boutons, `robots.txt`, `sitemap.xml`, assets).
+
+**Première activation — une seule fois, à la main.** L'endpoint qui active
+GitHub Pages exige un droit « admin » que le `GITHUB_TOKEN` d'Actions n'a pas
+(`403 Resource not accessible by integration`). Le workflow pousse donc le
+site sur la branche `gh-pages` et attend :
+
+1. **Settings → Pages** ;
+2. *Source* : **Deploy from a branch** ;
+3. *Branch* : `gh-pages`, dossier `/ (root)` → **Save**.
+
+Ensuite tout est automatique. Le résumé de chaque run rappelle cette marche à
+suivre tant que Pages n'est pas actif.
 
 ## Domaine personnalisé
 
