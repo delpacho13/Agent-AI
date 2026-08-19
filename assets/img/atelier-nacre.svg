@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" width="960" height="1200" role="img">
+<defs>
+  <linearGradient id="a-bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#efe8db"/><stop offset="1" stop-color="#ddd3c2"/>
+  </linearGradient>
+  <radialGradient id="a-light" cx="30%" cy="16%" r="70%">
+    <stop offset="0" stop-color="#fffdf8" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#fffdf8" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="a-gold" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#a3854f"/><stop offset="0.35" stop-color="#e2c691"/>
+    <stop offset="0.6" stop-color="#c9a876"/><stop offset="1" stop-color="#8f7444"/>
+  </linearGradient>
+  <linearGradient id="a-jar" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#c9bfae"/><stop offset="0.25" stop-color="#f6f1e7"/>
+    <stop offset="0.6" stop-color="#e2dacb"/><stop offset="1" stop-color="#b8ae9c"/>
+  </linearGradient>
+  <linearGradient id="a-amber" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8a5f24"/><stop offset="0.35" stop-color="#e0a83f"/>
+    <stop offset="0.62" stop-color="#c98c2c"/><stop offset="1" stop-color="#6d4a1b"/>
+  </linearGradient>
+</defs>
+<rect width="960" height="1200" fill="url(#a-bg)"/>
+<rect width="960" height="1200" fill="url(#a-light)"/>
+<!-- plan de travail en pierre -->
+<rect x="0" y="880" width="960" height="320" fill="#cdc2b1"/>
+<rect x="0" y="880" width="960" height="8" fill="#b9ad9a"/>
+<g fill="#000" fill-opacity="0.05">
+  <ellipse cx="250" cy="906" rx="150" ry="16"/><ellipse cx="600" cy="912" rx="180" ry="18"/>
+  <ellipse cx="838" cy="908" rx="96" ry="13"/>
+</g>
+<!-- flacon ambré -->
+<g>
+  <path d="M170 560 h150 a20 20 0 0 1 20 20 v282 a22 22 0 0 1 -22 22 h-146 a22 22 0 0 1 -22 -22 v-282 a20 20 0 0 1 20 -20 z" fill="url(#a-amber)"/>
+  <path d="M214 560 q-4 -28 5 -42 h62 q9 14 5 42 z" fill="url(#a-amber)"/>
+  <rect x="216" y="486" width="68" height="30" rx="6" fill="url(#a-gold)"/>
+  <rect x="204" y="452" width="92" height="42" rx="8" fill="url(#a-gold)"/>
+  <rect x="188" y="586" width="14" height="256" rx="7" fill="#fff" fill-opacity="0.28"/>
+  <rect x="150" y="676" width="190" height="112" fill="#f5f0e8" fill-opacity="0.92"/>
+  <text x="245" y="726" text-anchor="middle" fill="#0b0b0b" font-family="Georgia, serif" font-size="21" letter-spacing="8">NACRÉ</text>
+  <text x="245" y="756" text-anchor="middle" fill="#0b0b0b" fill-opacity="0.55" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3">ATELIER — PARIS</text>
+</g>
+<!-- pot de baume -->
+<g>
+  <ellipse cx="600" cy="700" rx="132" ry="26" fill="url(#a-gold)"/>
+  <rect x="468" y="700" width="264" height="182" fill="url(#a-jar)"/>
+  <ellipse cx="600" cy="882" rx="132" ry="26" fill="#c3b9a7"/>
+  <rect x="500" y="716" width="18" height="152" rx="9" fill="#fff" fill-opacity="0.5"/>
+  <ellipse cx="600" cy="700" rx="132" ry="26" fill="none" stroke="#8f7444" stroke-opacity="0.5"/>
+  <text x="600" y="806" text-anchor="middle" fill="#4a4034" fill-opacity="0.75" font-family="Georgia, serif" font-size="22" letter-spacing="9">NACRÉ</text>
+</g>
+<!-- éprouvette / pipette -->
+<g>
+  <rect x="806" y="546" width="52" height="330" rx="26" fill="#e9e3d6" fill-opacity="0.85"/>
+  <rect x="806" y="700" width="52" height="176" rx="26" fill="url(#a-amber)" fill-opacity="0.85"/>
+  <rect x="798" y="520" width="68" height="34" rx="10" fill="url(#a-gold)"/>
+  <rect x="816" y="566" width="10" height="290" rx="5" fill="#fff" fill-opacity="0.45"/>
+</g>
+<!-- brins végétaux -->
+<g stroke="#7d8a6a" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85">
+  <path d="M700 700 C 720 600 760 540 790 470"/>
+  <path d="M712 660 C 742 636 772 628 800 632"/>
+  <path d="M726 606 C 700 578 686 546 684 512"/>
+</g>
+<g fill="#8d9a78" opacity="0.9">
+  <ellipse cx="798" cy="466" rx="34" ry="15" transform="rotate(-32 798 466)"/>
+  <ellipse cx="806" cy="630" rx="30" ry="13" transform="rotate(10 806 630)"/>
+  <ellipse cx="682" cy="508" rx="28" ry="13" transform="rotate(-68 682 508)"/>
+</g>
+<!-- poudre libre -->
+<g opacity="0.5" fill="#c9a876">
+  <ellipse cx="400" cy="892" rx="86" ry="12"/><ellipse cx="400" cy="886" rx="52" ry="9"/>
+</g>
+<text x="480" y="1116" text-anchor="middle" fill="#0b0b0b" fill-opacity="0.35" font-family="Georgia, serif" font-size="20" letter-spacing="10">ATELIER NACRÉ — PARIS IV</text>
+</svg>

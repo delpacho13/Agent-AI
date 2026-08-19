@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img">
+<defs>
+  <linearGradient id="o-bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1b1917"/><stop offset="1" stop-color="#0e0d0c"/>
+  </linearGradient>
+  <radialGradient id="o-glow" cx="50%" cy="34%" r="62%">
+    <stop offset="0" stop-color="#c9a876" stop-opacity="0.22"/>
+    <stop offset="0.55" stop-color="#c9a876" stop-opacity="0.05"/>
+    <stop offset="1" stop-color="#c9a876" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="o-floor" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#000" stop-opacity="0.62"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="o-gold" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6d5836"/><stop offset="0.18" stop-color="#c9a876"/>
+    <stop offset="0.42" stop-color="#f0dcb8"/><stop offset="0.66" stop-color="#c9a876"/>
+    <stop offset="1" stop-color="#7a6440"/>
+  </linearGradient>
+  <linearGradient id="o-steel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4a4a4d"/><stop offset="0.2" stop-color="#b9bcc2"/>
+    <stop offset="0.45" stop-color="#eef1f5"/><stop offset="0.7" stop-color="#9a9ea6"/>
+    <stop offset="1" stop-color="#4d4d51"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="1200" fill="url(#o-bg)"/>
+<rect width="900" height="1200" fill="url(#o-glow)"/>
+
+<defs>
+  <linearGradient id="o-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3a2a14"/><stop offset="0.14" stop-color="#8a5f24"/>
+    <stop offset="0.34" stop-color="#e0a83f"/><stop offset="0.5" stop-color="#f6d089"/>
+    <stop offset="0.68" stop-color="#d99b34"/><stop offset="0.88" stop-color="#7d5620"/>
+    <stop offset="1" stop-color="#31240f"/>
+  </linearGradient>
+  <linearGradient id="o-oil" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f3c477" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#8a5a19" stop-opacity="0.55"/>
+  </linearGradient>
+</defs>
+<ellipse cx="450" cy="1035" rx="250" ry="30" fill="url(#o-floor)"/>
+
+<!-- corps -->
+<path d="M330 452 h240 a26 26 0 0 1 26 26 v498 a30 30 0 0 1 -30 30 h-232 a30 30 0 0 1 -30 -30 v-498 a26 26 0 0 1 26 -26 z" fill="url(#o-glass)"/>
+<!-- niveau d'huile -->
+<path d="M334 560 h232 v412 a26 26 0 0 1 -26 26 h-180 a26 26 0 0 1 -26 -26 z" fill="url(#o-oil)"/>
+<!-- épaule + col -->
+<path d="M392 452 q-6 -42 8 -62 h100 q14 20 8 62 z" fill="url(#o-glass)"/>
+<rect x="396" y="352" width="108" height="46" rx="7" fill="url(#o-glass)"/>
+<!-- pipette : bague + poire -->
+<rect x="386" y="322" width="128" height="40" rx="9" fill="url(#o-gold)"/>
+<rect x="386" y="322" width="128" height="12" rx="6" fill="#f0dcb8" fill-opacity="0.35"/>
+<rect x="398" y="196" width="104" height="132" rx="46" fill="url(#o-gold)"/>
+<ellipse cx="450" cy="200" rx="52" ry="15" fill="#f0dcb8" fill-opacity="0.55"/>
+<g stroke="#3d3018" stroke-opacity="0.35" stroke-width="2">
+  <line x1="414" y1="222" x2="414" y2="302"/><line x1="432" y1="216" x2="432" y2="308"/>
+  <line x1="450" y1="214" x2="450" y2="310"/><line x1="468" y1="216" x2="468" y2="308"/>
+  <line x1="486" y1="222" x2="486" y2="302"/>
+</g>
+<!-- reflets verre -->
+<rect x="356" y="480" width="18" height="470" rx="9" fill="#ffffff" fill-opacity="0.20"/>
+<rect x="386" y="500" width="7" height="410" rx="4" fill="#ffffff" fill-opacity="0.10"/>
+<rect x="540" y="510" width="12" height="420" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+<!-- étiquette -->
+<rect x="352" y="640" width="196" height="196" fill="#f5f0e8" fill-opacity="0.93"/>
+<text x="450" y="712" text-anchor="middle" fill="#0b0b0b" font-family="Georgia, serif" font-size="26" letter-spacing="10">NACRÉ</text>
+<line x1="392" y1="736" x2="508" y2="736" stroke="#c9a876" stroke-width="1"/>
+<text x="450" y="770" text-anchor="middle" fill="#0b0b0b" fill-opacity="0.72" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="3">HUILE CHEVEUX</text>
+<text x="450" y="794" text-anchor="middle" fill="#0b0b0b" fill-opacity="0.55" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3">RÉPARATRICE</text>
+<text x="450" y="818" text-anchor="middle" fill="#0b0b0b" fill-opacity="0.4" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2">50 ML</text>
+<text x="450" y="1128" text-anchor="middle" fill="#c9a876" fill-opacity="0.5" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9">NACRÉ</text>
+</svg>

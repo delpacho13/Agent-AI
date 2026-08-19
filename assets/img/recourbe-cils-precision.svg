@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img">
+<defs>
+  <linearGradient id="c-bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1b1917"/><stop offset="1" stop-color="#0e0d0c"/>
+  </linearGradient>
+  <radialGradient id="c-glow" cx="50%" cy="34%" r="62%">
+    <stop offset="0" stop-color="#c9a876" stop-opacity="0.22"/>
+    <stop offset="0.55" stop-color="#c9a876" stop-opacity="0.05"/>
+    <stop offset="1" stop-color="#c9a876" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="c-floor" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#000" stop-opacity="0.62"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="c-gold" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6d5836"/><stop offset="0.18" stop-color="#c9a876"/>
+    <stop offset="0.42" stop-color="#f0dcb8"/><stop offset="0.66" stop-color="#c9a876"/>
+    <stop offset="1" stop-color="#7a6440"/>
+  </linearGradient>
+  <linearGradient id="c-steel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4a4a4d"/><stop offset="0.2" stop-color="#b9bcc2"/>
+    <stop offset="0.45" stop-color="#eef1f5"/><stop offset="0.7" stop-color="#9a9ea6"/>
+    <stop offset="1" stop-color="#4d4d51"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="1200" fill="url(#c-bg)"/>
+<rect width="900" height="1200" fill="url(#c-glow)"/>
+<ellipse cx="450" cy="1044" rx="250" ry="30" fill="url(#c-floor)"/>
+
+<g transform="translate(0,40)">
+  <!-- anneaux -->
+  <ellipse cx="352" cy="826" rx="92" ry="118" fill="none" stroke="url(#c-steel)" stroke-width="26"/>
+  <ellipse cx="548" cy="826" rx="92" ry="118" fill="none" stroke="url(#c-steel)" stroke-width="26"/>
+  <ellipse cx="352" cy="826" rx="92" ry="118" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="6"/>
+  <ellipse cx="548" cy="826" rx="92" ry="118" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="6"/>
+  <!-- branches -->
+  <path d="M368 712 C 384 560 410 470 424 404" stroke="url(#c-steel)" stroke-width="30" fill="none" stroke-linecap="round"/>
+  <path d="M532 712 C 516 560 490 470 476 404" stroke="url(#c-steel)" stroke-width="30" fill="none" stroke-linecap="round"/>
+  <!-- pivot -->
+  <circle cx="450" cy="612" r="27" fill="url(#c-gold)"/>
+  <circle cx="450" cy="612" r="11" fill="#0f0e0d" fill-opacity="0.55"/>
+  <!-- mâchoire supérieure -->
+  <path d="M300 300 h300 a26 26 0 0 1 26 26 v34 a26 26 0 0 1 -26 26 h-300 a26 26 0 0 1 -26 -26 v-34 a26 26 0 0 1 26 -26 z" fill="url(#c-steel)"/>
+  <path d="M292 258 h316 a22 22 0 0 1 22 22 v20 h-360 v-20 a22 22 0 0 1 22 -22 z" fill="url(#c-steel)"/>
+  <!-- coussinet silicone -->
+  <rect x="292" y="238" width="316" height="26" rx="13" fill="#e8c4c0"/>
+  <rect x="292" y="238" width="316" height="10" rx="5" fill="#ffffff" fill-opacity="0.35"/>
+  <!-- reflets métal -->
+  <rect x="286" y="316" width="330" height="8" rx="4" fill="#ffffff" fill-opacity="0.35"/>
+  <rect x="286" y="356" width="330" height="5" rx="3" fill="#000000" fill-opacity="0.25"/>
+  <!-- gravure -->
+  <text x="450" y="348" text-anchor="middle" fill="#2f3134" fill-opacity="0.75" font-family="Georgia, serif" font-size="19" letter-spacing="9">NACRÉ</text>
+</g>
+<text x="450" y="1136" text-anchor="middle" fill="#c9a876" fill-opacity="0.5" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9">NACRÉ</text>
+</svg>

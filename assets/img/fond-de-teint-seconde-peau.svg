@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img">
+<defs>
+  <linearGradient id="f-bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1b1917"/><stop offset="1" stop-color="#0e0d0c"/>
+  </linearGradient>
+  <radialGradient id="f-glow" cx="50%" cy="34%" r="62%">
+    <stop offset="0" stop-color="#c9a876" stop-opacity="0.22"/>
+    <stop offset="0.55" stop-color="#c9a876" stop-opacity="0.05"/>
+    <stop offset="1" stop-color="#c9a876" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="f-floor" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#000" stop-opacity="0.62"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="f-gold" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6d5836"/><stop offset="0.18" stop-color="#c9a876"/>
+    <stop offset="0.42" stop-color="#f0dcb8"/><stop offset="0.66" stop-color="#c9a876"/>
+    <stop offset="1" stop-color="#7a6440"/>
+  </linearGradient>
+  <linearGradient id="f-steel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4a4a4d"/><stop offset="0.2" stop-color="#b9bcc2"/>
+    <stop offset="0.45" stop-color="#eef1f5"/><stop offset="0.7" stop-color="#9a9ea6"/>
+    <stop offset="1" stop-color="#4d4d51"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="1200" fill="url(#f-bg)"/>
+<rect width="900" height="1200" fill="url(#f-glow)"/>
+
+<defs>
+  <linearGradient id="f-glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#2a2622"/><stop offset="0.13" stop-color="#6b5f52"/>
+    <stop offset="0.3" stop-color="#cbb9a4"/><stop offset="0.5" stop-color="#efe2d1"/>
+    <stop offset="0.7" stop-color="#c0ac96"/><stop offset="0.88" stop-color="#665a4d"/>
+    <stop offset="1" stop-color="#241f1b"/>
+  </linearGradient>
+  <linearGradient id="f-fluid" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e8c9a6"/><stop offset="1" stop-color="#b98d63"/>
+  </linearGradient>
+</defs>
+<ellipse cx="450" cy="1032" rx="245" ry="30" fill="url(#f-floor)"/>
+
+<!-- flacon carré à épaules douces -->
+<path d="M312 468 h276 a22 22 0 0 1 22 22 v486 a26 26 0 0 1 -26 26 h-268 a26 26 0 0 1 -26 -26 v-486 a22 22 0 0 1 22 -22 z" fill="url(#f-glass)"/>
+<path d="M318 556 h264 v420 a22 22 0 0 1 -22 22 h-220 a22 22 0 0 1 -22 -22 z" fill="url(#f-fluid)" fill-opacity="0.88"/>
+<!-- col -->
+<path d="M402 468 q-4 -34 6 -50 h84 q10 16 6 50 z" fill="url(#f-glass)"/>
+<rect x="404" y="392" width="92" height="34" rx="6" fill="url(#f-glass)"/>
+<!-- pompe -->
+<rect x="392" y="336" width="116" height="60" rx="10" fill="url(#f-gold)"/>
+<rect x="392" y="336" width="116" height="14" rx="7" fill="#f0dcb8" fill-opacity="0.4"/>
+<rect x="424" y="272" width="52" height="68" rx="12" fill="url(#f-gold)"/>
+<path d="M424 286 h-52 a12 12 0 0 0 -12 12 v10 a12 12 0 0 0 12 12 h52 z" fill="url(#f-gold)"/>
+<!-- reflets -->
+<rect x="340" y="500" width="20" height="468" rx="10" fill="#ffffff" fill-opacity="0.24"/>
+<rect x="372" y="522" width="8" height="426" rx="4" fill="#ffffff" fill-opacity="0.12"/>
+<rect x="558" y="530" width="14" height="418" rx="7" fill="#ffffff" fill-opacity="0.10"/>
+<!-- sérigraphie -->
+<text x="450" y="716" text-anchor="middle" fill="#3b2b1d" fill-opacity="0.85" font-family="Georgia, serif" font-size="27" letter-spacing="11">NACRÉ</text>
+<line x1="388" y1="742" x2="512" y2="742" stroke="#3b2b1d" stroke-opacity="0.4" stroke-width="1"/>
+<text x="450" y="776" text-anchor="middle" fill="#3b2b1d" fill-opacity="0.7" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="3">SECONDE PEAU</text>
+<text x="450" y="802" text-anchor="middle" fill="#3b2b1d" fill-opacity="0.5" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3">N° 14 — SABLE</text>
+<text x="450" y="900" text-anchor="middle" fill="#3b2b1d" fill-opacity="0.4" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2">30 ML</text>
+<!-- nuancier discret -->
+<g>
+  <circle cx="702" cy="912" r="34" fill="#e3c1a0"/>
+  <circle cx="742" cy="962" r="34" fill="#c69a76"/>
+  <circle cx="676" cy="972" r="28" fill="#9a6f4f"/>
+</g>
+<text x="450" y="1128" text-anchor="middle" fill="#c9a876" fill-opacity="0.5" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9">NACRÉ</text>
+</svg>
